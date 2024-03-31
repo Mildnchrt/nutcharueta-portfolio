@@ -1,12 +1,16 @@
+import { FC, MutableRefObject } from 'react';
 import profilePic from '../../assets/profile-pic.png'
+interface IAboutMeProps {
+  aboutMeRef: MutableRefObject<HTMLDivElement | null>
+}
 
-export const AboutMe = () => {
+export const AboutMe: FC<IAboutMeProps> = ({ aboutMeRef }) => {
   const age = new Date().getFullYear() - 1996;
   const intro = "I am graduated from Kasetsart University in Software and Knowledge Engineering field. Currently I am a full time employee of SCB TechX as a Frontend developer. I have experiences in web development and  others. I'm looking for a role where i can grow,  explore my skills, and learn from other experienced team members."
   return (
-    <div className="relative flex flex-col justify-center gap-8 snap-center h-screen px-[10%]">
+    <div  className="relative flex flex-col justify-center gap-8 snap-center h-screen px-[10%]">
       <h1 className="mt-[5%]">About me!</h1>
-      <div className="h-auto flex flex-col items-center gap-8 lg:grid lg:grid-cols-3 lg:gap-16 lg:content-center mb-[5%] bg-neon rounded-2xl p-[20px] text-[20px]">
+      <div ref={aboutMeRef} className="h-auto flex flex-col items-center gap-8 lg:grid lg:grid-cols-3 lg:gap-16 lg:content-center mb-[5%] bg-neon rounded-2xl p-[20px] text-[20px]">
         <img src={profilePic} className=" -rotate-12 w-[50%] md:w-[40%] lg:w-full"/>
         <div className="col-span-2 font-mono text-[14px] lg:text-[20px]">
           <div className="lg:pl-[40px] lg:pr-[10px]">

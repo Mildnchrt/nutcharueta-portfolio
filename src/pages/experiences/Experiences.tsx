@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { FC, MutableRefObject, useState } from "react";
 import { TimelineCard } from "../../components/timeline/TimelineCard";
 import { PopupData } from "../../types/common";
 import { Popup } from "../../components/popup/Popup";
+interface IExperiencesProps {
+  expRef: MutableRefObject<HTMLDivElement | null>
+}
 
-export const Experiences = () => {
+export const Experiences: FC<IExperiencesProps> = ({ expRef }) => {
   const [shouldShowPopup, setShouldShowPopup] = useState(false);
   const [popupData, setPopupData] = useState<PopupData>({});
   
@@ -76,7 +79,7 @@ export const Experiences = () => {
   return (
     <div className="relative overflow-x-auto flex flex-col snap-center h-screen pl-[10%]">
       <h1 className="mt-[5%]">Experiences</h1>
-      <div className="overflow-x-auto h-full flex">
+      <div ref={expRef} className="overflow-x-auto h-full flex">
         {data.map((t, i) => (
           <TimelineCard 
             index={i}

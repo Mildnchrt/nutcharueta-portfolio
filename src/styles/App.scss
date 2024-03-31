@@ -59,6 +59,28 @@
   }
 }
 
+.paging {
+  content: "";
+  background: $deep-gray;
+  opacity: 0.3;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.5s;
+  z-index: 2;
+
+  &:hover {
+    opacity: 0.6;
+    transform: scale(1.5);
+  }
+
+  &.active {
+    opacity: 0.6;
+    transform: scale(1.5);
+  }
+}
+
+
 .timeline-separater {
   position: relative;
   background-color: $deep-gray;

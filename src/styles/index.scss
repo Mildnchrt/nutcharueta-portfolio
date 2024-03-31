@@ -42,10 +42,12 @@ a {
   color: $deep-gray;
   text-decoration: inherit;
   text-decoration: underline;
-}
-a:hover {
-  color: $purple;
-  text-decoration: underline;
+  outline: 0 !important;
+  &:hover, &:focus {
+    color: $purple;
+    text-decoration: underline;
+    outline: 0 !important;
+  }
 }
 
 body {
@@ -70,6 +72,9 @@ button {
   background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
+  &:focus {
+    outline: 0 !important;
+  }
 }
 button:hover {
   color: $cream;
