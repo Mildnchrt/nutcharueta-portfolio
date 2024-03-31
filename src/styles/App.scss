@@ -1,0 +1,163 @@
+@import './variables.scss';
+
+// .button-outline {
+//   border: 2px solid rgb(38, 38, 38);
+//   background-color: transparent;
+  
+//   &:hover {
+//     border-color: rgb(38, 38, 38);
+//     background-color: rgb(38, 38, 38);
+//     color: $cream;
+//   }
+// }
+.timeline-card {
+  min-width: 300px;
+  display: grid;
+  grid-row-gap: 1rem;
+  grid-template-rows: 1fr 0.125rem 0.5fr;
+}
+
+.timeline-title {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  cursor: pointer;
+  margin-top: auto;
+  margin-left: 72px;
+  text-wrap: nowrap;
+
+  .title-1 {
+    font-size: 1.5rem;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+  }
+  .title-2 {
+    font-size: 1rem;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+  }
+
+  .tag-1 {
+    color: $cream;
+    background-color: $deep-gray;
+    padding: 0 10px 0 10px;;
+  }
+
+  &:hover {
+    .title-1 {
+      font-size: 2rem;
+      // -webkit-text-stroke: 1.5px $purple;
+      // color: $deep-gray;
+    }
+    .title-2 {
+      font-size: 1.2rem;
+    }
+    .tag-1 {
+      color: $deep-gray;
+      background-color: $green-neon;
+    }
+  }
+}
+
+.timeline-separater {
+  position: relative;
+  background-color: $deep-gray;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.35rem;
+    left: 1.5rem;
+    transform: translateX(-50%);
+
+    background: inherit;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    &:hover {
+      box-shadow: 0px 0px 10px rgb(38, 38, 38);
+    }
+  }
+}
+
+.timeline-separater-effect {
+  position: relative;
+  background-color: $deep-gray;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.35rem;
+    left: 1.5rem;
+    transform: translateX(-50%);
+
+    background: $deep-gray;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    box-shadow: 0px 0px 10px $deep-gray;
+  }
+}
+
+
+.timeline-separater-sub {
+  position: relative;
+  background-color: $deep-gray;
+  &::before {
+    background-color: $cream;
+    content: '';
+    position: absolute;
+    top: -0.35rem;
+    left: 1.5rem;
+    transform: translateX(-50%);
+    border: 2px solid $deep-gray;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+.timeline-separater-sub-effect {
+  position: relative;
+  background-color: $deep-gray;
+  &::before {
+    background-color: $cream;
+    content: '';
+    position: absolute;
+    top: -0.35rem;
+    left: 1.5rem;
+    transform: translateX(-50%);
+    border: 2px solid $deep-gray;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    box-shadow: 0px 0px 10px $deep-gray;
+  }
+}
+
+.tlc-popup {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $green-neon;
+  box-shadow: 0px 0px 15px $purple;
+  padding: 25px;
+
+  button {
+    height: fit-content;
+    padding: 0;
+    border: 1px solid $deep-gray;
+  }
+
+  .close-btn {
+    color: $deep-gray;
+    font-size: 20px;
+    &:hover {
+      background-color: $deep-gray;
+      color: $cream;
+    }
+  }
+
+  
+}
